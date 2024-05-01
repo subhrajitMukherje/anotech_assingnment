@@ -25,8 +25,8 @@
     "wouter": "^3.1.2"
   },
   "scripts": {
-    "start": "npm start",
-    "build":"npm run build"
+    "start": "react-scripts start",
+    "build":"react-scripts build"
   },
   "eslintConfig": {
     "extends": [
