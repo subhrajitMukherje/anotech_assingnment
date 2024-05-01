@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import { Route } from "wouter";
+import AddTodo from "./components/Todos/AddTodo";
+import PersistentDrawerLeft from "./components/PersistentDrawerLeft";
+import Todos from "./components/Todos/Todos";
+import { MainContext } from "./context/MainContext";
+import About from "./pages/About";
+import Settings from "./pages/Settings";
 
 function App() {
+  const { addTodo } = useContext(MainContext)!;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ height: "100vh" }}>
+      <PersistentDrawerLeft />
+      <Route path="/">
+        <AddTodo addTodo={addTodo} />
+        <Todos />
+      </Route>
+      <Route path="/settings">
+        <Settings />
+      </Route>
+      <Route path="/about">
+        <About />
+      </Route>
     </div>
   );
 }
