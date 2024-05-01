@@ -6,6 +6,8 @@ import {
   YouTube,
   Instagram,
 } from "@material-ui/icons";
+import React from 'react';
+
 
 const About = () => {
   return (

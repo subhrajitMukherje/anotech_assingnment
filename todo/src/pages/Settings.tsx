@@ -3,11 +3,11 @@ import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import { DeleteConfirmContext } from "../context/DeleteConfirmContext";
 import { SmallTextContext } from "../context/SmallTextContext";
+import React from "react";
 
 const Settings = () => {
-  const { isDeleteConfirmation, changeDeleteConfirm } = useContext(
-    DeleteConfirmContext
-  )!;
+  const { isDeleteConfirmation, changeDeleteConfirm } =
+    useContext(DeleteConfirmContext)!;
   const { isDark, changeTheme } = useContext(ThemeContext)!;
   const { isSmallText, changeSmallText } = useContext(SmallTextContext)!;
   const matches = useMediaQuery("(max-width: 768px)");
